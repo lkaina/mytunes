@@ -6,8 +6,8 @@ var Song = Backbone.Model.extend({
     this.trigger('play', this);
   },
 
-  end: function(){
-    this.trigger('end', this);
+  ended: function(){
+    this.trigger('ended', this);
   }
 
 });
