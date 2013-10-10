@@ -49,7 +49,6 @@ describe('SongQueue', function() {
 
     describe('if there are any songs left in the queue', function() {
       it('plays the first song in the queue', function() {
-        debugger;
         var songQueue = new SongQueue([songData1, songData2]);
         songQueue.at(0).ended();
         expect(playSpy).toHaveBeenCalled();
@@ -57,7 +56,7 @@ describe('SongQueue', function() {
     });
 
     describe('if there are no songs left in the queue', function() {
-      xit('does nothing', function() {
+      it('does nothing', function() {
         var songQueue = new SongQueue(songData1);
         songQueue.at(0).ended();
         expect(playSpy).not.toHaveBeenCalled();
@@ -66,10 +65,11 @@ describe('SongQueue', function() {
   });
 
   describe('when a song is dequeued', function() {
-    xit('removes the song', function() {
+    it('removes the song', function() {
       removeSpy = spyOn(SongQueue.prototype, 'remove').andCallThrough();
-      var songQueue = new SongQueue(songData1);
-      songQueue.at(0).dequeue();
+      var songQueue = new SongQueue([songData1, songData2]);
+      debugger;
+      songQueue.at(1).dequeue();
       expect(removeSpy).toHaveBeenCalled();
     });
   });
