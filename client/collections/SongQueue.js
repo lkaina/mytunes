@@ -9,20 +9,19 @@ var SongQueue = Songs.extend({
       }
     }, this);
 
-    this.on('ended', function(){
+    this.on('ended', function(song){
       this.remove(this.at(0));
       if (this.length) {
         this.playFirst();
       }
     });
 
-    this.on('enqueue', function(){
-      debugger;
+    this.on('enqueue', function(song){
+      this.add(song);
     });
 
-    this.on('dequeue', function(){
-      debugger; 
-      this.remove(this.at());
+    this.on('dequeue', function(song){
+      song.ended();
     });
 
   },
