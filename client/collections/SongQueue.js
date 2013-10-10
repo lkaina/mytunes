@@ -16,11 +16,14 @@ var SongQueue = Songs.extend({
       }
     });
 
-    this.on('dequeue', function(){
+    this.on('enqueue', function(){
       debugger;
-      //FIX!
+    });
+
+    this.on('dequeue', function(){
+      debugger; 
       this.remove(this.at());
-    })
+    });
 
   },
 

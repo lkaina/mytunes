@@ -68,15 +68,15 @@ describe('SongQueue', function() {
     it('removes the song', function() {
       removeSpy = spyOn(SongQueue.prototype, 'remove').andCallThrough();
       var songQueue = new SongQueue([songData1, songData2]);
-      debugger;
       songQueue.at(1).dequeue();
       expect(removeSpy).toHaveBeenCalled();
     });
   });
 
   describe('playFirst', function() {
-    xit('plays the first song in the queue', function() {
+    it('plays the first song in the queue', function() {
       spyOn(Song.prototype, 'play').andCallThrough();
+      debugger;
       var songQueue = new SongQueue(songData1);
       songQueue.playFirst();
       expect(songQueue.at(0).play).toHaveBeenCalled();
