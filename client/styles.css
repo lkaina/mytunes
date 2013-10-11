@@ -1,0 +1,11 @@
+header {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+h1 {
+  color: rgba(25, 150, 255, 0.8);
+  font: 12 px arial, sans-serif;
+}
+
